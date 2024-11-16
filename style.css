@@ -54,7 +54,7 @@ select {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid orangered;
+    border: 1px solid orangered;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
