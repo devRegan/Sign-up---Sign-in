@@ -5,13 +5,12 @@
     font-family: Arial, sans-serif;
   }
 
-  .container {
+.container {
     width: 1440px;
     height: 1238px;
-    align-items: center;
   }
   
-  .nav {
+.nav {
     width: 1440px;
     height: 73px;
     background-color: #DFF2EB;
