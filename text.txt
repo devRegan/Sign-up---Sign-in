@@ -1,0 +1,18 @@
+<select name="language" id="language" onchange="languageChanged()">
+    <option value="english">English (United States)</option>
+    <option value="bangla">বাংলা (Bangla)</option>
+    <option value="spanish">Español (Spanish)</option>
+    <option value="chiness">中文 (Chinese)</option>
+</select>
+
+    border: 2px solid gray;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+                    </div>
+                <div class="form">
+
+
+git update

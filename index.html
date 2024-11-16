@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="nav">
+            <div class="menu">
+                <select name="language" id="language" onchange="languageChanged()">
+                    <option value="english">English (United States)</option>
+                    <option value="bangla">বাংলা (Bangla)</option>
+                    <option value="spanish">Español (Spanish)</option>
+                    <option value="chiness">中文 (Chinese)</option>
+                </select>
+                <div class="mode-toggle">
+                    <img src="icons/b.png" alt="Dark/Light">
+                </div>
+            </div>
+        </nav>
+        <div class="sign-up">
+            <form action="#none">
+                <h2>Sign in</h2>
+                <div class="form-box">
+                    <label for="email">Email or mobile number</label>
+                    <input type="text" id="email" name="email" placeholder="Email or mobile number" required>
+                </div>
+                <div class="form-box">
+                    <label for="password">Your password</label>
+                    <input type="password" name="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit">Log in</button>
+                <p>Or</p>
+                <div class="social-buttons">
+                    <a href="#facebook" class="facebook"><img src="icons/fb.png" alt="Facebook">Continue with Facebook</a>
+                    <a href="#gmail" class="gmail"><img src="icons/google.png" alt="Gmail">Continue with Gmail</a>
+                    <a href="#github" class="github"><img src="icons/github.png" alt="GitHub">Continue with GitHub</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
