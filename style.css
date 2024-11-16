@@ -80,8 +80,8 @@ label {
 
 input {
     margin-top: 10px;
-    width: 528px;
-    height: 55px;
+    width: 500px;
+    height: 50px;
     border: 2px solid gray;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -118,8 +118,8 @@ p {
 }
 
 a {
-    width: 528px;
-    height: 55px;
+    width: 500px;
+    height: 50px;
     border: 2px solid gray;
     border-radius: 50px;
     display: flex;
