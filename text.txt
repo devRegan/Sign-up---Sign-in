@@ -1,18 +1,620 @@
-<select name="language" id="language" onchange="languageChanged()">
-    <option value="english">English (United States)</option>
-    <option value="bangla">বাংলা (Bangla)</option>
-    <option value="spanish">Español (Spanish)</option>
-    <option value="chiness">中文 (Chinese)</option>
-</select>
+HTML ==>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="nav">
+            <div class="menu">
+                <select name="language" id="language" onchange="languageChanged()">
+                    <option value="english">English (United States)</option>
+                    <option value="bangla">বাংলা (Bangla)</option>
+                    <option value="spanish">Español (Spanish)</option>
+                    <option value="chiness">中文 (Chinese)</option>
+                </select>
+                <div class="mode-toggle" onclick="toggleMode()">
+                    <img src="icons/dark-mode.png" alt="Dark/Light">
+                </div>
+            </div>
+        </nav>
+        <div class="sign-in">
+            <form action="#none">
+                <h2>Sign in</h2>
+                <div class="form-box">
+                    <label for="email">Email or mobile number</label>
+                    <input type="text" id="email" name="email" placeholder="Email or mobile number" required>
+                </div>
+                <div class="form-box">
+                    <label for="password">Your password</label>
+                    <input type="password" name="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit">Log in</button>
+                <p>Or</p>
+                <div class="social-buttons">
+                    <a href="#facebook" class="facebook"><img src="icons/fb.png" alt="Facebook">Continue with Facebook</a>
+                    <a href="#gmail" class="gmail"><img src="icons/google.png" alt="Gmail">Continue with Gmail</a>
+                    <a href="#github" class="github"><img src="icons/github.png" alt="GitHub">Continue with GitHub</a>
+                </div>
+                <a href="sign-up" id="sign-up" class="last-a-tag">Create an account</a>
+            </form>
+        </div>
+    </div>
+    <div class="sign-up">
+        <form action="#none2">
+            <h2>Create an account</h2>
+            <div class="parent-form-box">
+            <div class="from-box">
+                <label for="username">Profile name</label>
+                <input type="text" name="username" id="usernmae" placeholder="Enter your profile name" required>
+            </div>
+            <div class="form-box">
+                <label for="useremail">Email</label>
+                <input type="text" name="useremail" id="useremail" placeholder="Enter your email address" requirede>
+            </div>
+            <div class="form-box">
+                <label for="userpassword">Password</label>
+                <input type="password" name="userpassword" id="userpassword" placeholder="Enter your password" required>
+                <p>Use 8 or more characters with a mix letters,numbers & symbols</p>
+            </div>
+        </div>
+            <div class="user-data">
+                <div class="gender">
+                    <label for="gender">What's your gender? (optional)</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="non-binary" name="gender" value="non-binary">
+                    <label for="non-binary">Non-binary</label>
+                </div>
+                <label for="dob">What's your date of birth?</label>
+                <div class="dob-months">
+                    <label for="dob-month">Months</label>
+                    <select name="dob-month" id="dob-month">
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select>
+                </div>
+                <div class="dob-date">
+                    <label for="dob-date">Date</label>
+                    <select name="dob-date" id="dob-date">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+            
+                <div class="dob-year">
+                    <label for="dob-year">Year</label>
+                    <select name="dob-year" id="dob-year">
+                        <option value="1800">1800</option>
+                        <option value="1900">1900</option>
+                        <option value="2000">2000</option>
+                    </select>
+                </div>
+            
+                <p>By creating an account, you agree to the <a href="Terms of use">Terms of use</a> and <a href="Privacy Policy">Privacy Policy</a>.</p>
+            
+                <div class="reCAPTCHA">
+                    <input type="checkbox" id="reCAPTCHA" checked>
+                    <label for="reCAPTCHA">I'm not a robot</label>
+                    <img src="icons/google_recaptcha-official 2.svg" alt="reCAPTCHA">
+                </div>
+            
+                <button class="sign-up-button">Sign Up</button>
+                <p>Already have an account? <a href="sign-in">Sign in</a></p>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
 
+JS ==>
+
+function toggleMode() {
+        document.body.classList.toggle('dark-mode');
+        if (document.body.classList.contains('dark-mode')) {
+            localStorage.setItem('mode', 'dark');
+        } else {
+            localStorage.setItem('mode', 'light');
+        }
+    }
+    window.onload = function() {
+        const savedMode = localStorage.getItem('mode');
+        if (savedMode === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+    }
+
+    function languageChanged() {
+        const selectedLanguage = document.getElementById("language").value;
+        
+        const translations = {
+            english: {
+                title: "Sign in",
+                emailLabel: "Email or mobile number",
+                passwordLabel: "Your password",
+                submitButton: "Log in",
+                or: "Or"
+            },
+            bangla: {
+                title: "সাইন ইন করুন",
+                emailLabel: "ইমেইল বা মোবাইল নম্বর",
+                passwordLabel: "আপনার পাসওয়ার্ড",
+                submitButton: "লগ ইন করুন",
+                or: "অথবা"
+            },
+            spanish: {
+                title: "Iniciar sesión",
+                emailLabel: "Correo electrónico o número de móvil",
+                passwordLabel: "Tu contraseña",
+                submitButton: "Iniciar sesión",
+                or: "O"
+            },
+            chiness: {
+                title: "登录",
+                emailLabel: "电子邮件或手机号码",
+                passwordLabel: "您的密码",
+                submitButton: "登录",
+                or: "或"
+            }
+        };
+        
+        const lang = translations[selectedLanguage];
+        document.querySelector("h2").textContent = lang.title;
+        document.querySelector("label[for='email']").textContent = lang.emailLabel;
+        document.querySelector("label[for='password']").textContent = lang.passwordLabel;
+        document.querySelector("button[type='submit']").textContent = lang.submitButton;
+        document.querySelector("p").textContent = lang.or;
+    }
+    
+    function toggleForms() {
+        const signInForm = document.getElementById('sign-in-form');
+        const signUpForm = document.getElementById('sign-up-form');
+    
+        // Toggle visibility of the forms
+        if (signInForm.style.display === 'none' || signInForm.style.display === '') {
+            signInForm.style.display = 'block';
+            signUpForm.style.display = 'none';
+        } else {
+            signInForm.style.display = 'none';
+            signUpForm.style.display = 'block';
+        }
+    }
+    
+    // Initialize the forms on page load
+    document.addEventListener('DOMContentLoaded', () => {
+        const signInForm = document.getElementById('sign-in-form');
+        const signUpForm = document.getElementById('sign-up-form');
+    
+        // Set initial display
+        signInForm.style.display = 'block';
+        signUpForm.style.display = 'none';
+    });
+
+
+    CSS ==>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+
+body {
+    background-color: white;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+body.dark-mode select,
+body.dark-mode option {
+    background-color: black;
+    color: white;
+}
+
+body.dark-mode label,
+body.dark-mode p {
+    color: white;
+}
+
+body.dark-mode button {
+    color: whitesmoke;
+}
+
+.container {
+    width: 100%;
+    height: 1500px;
+/*    background-color: cadetblue; */
+    background-color: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.nav {
+    width: 100%;
+    height: 73px;
+/*    background-color: #DFF2EB;  */
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+
+}
+
+.menu {
+    widtH: 600px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+select {
+    width: 220px;
+    height: 35px;
+    border: none;
+    background-color: transparent;
+    font-size: 18px;
+    margin-right: 40px;
+}
+
+.mode-toggle img {
+    widtH: 35px;
+    height: 35px;
+    background-size: cover;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+.sign-in {
+    width: 640px;
+    height: 600px;
+    background-color: antiquewhite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid orangered;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    flex-direction: column;
+    position: fixed;
+    top: 12%;
+}
+
+.sign-in {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign-in {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form .last-a-tag {
+    width: 528px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/*.form-box:nth-child(2) {
+    margin-top: 5px;
+}*/
+
+label {
+    width: 528px;
+    height: 25px;
+    color:gray; 
+}
+
+input {
+    margin-top: 10px;
+    width: 500px;
+    height: 50px;
     border: 2px solid gray;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 18px;
+    color: black;
+    text-align: center;
+}
 
-                    </div>
-                <div class="form">
+button {
+    width: 100px;
+    height: 60px;
+    background-color: gray;
+    color: whitesmoke;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    margin-top: 20px;
+    flex-direction: ;
+}
+
+.social-buttons {
+    display: flex;
+    /*align-items: center;*/
+    flex-direction: column;
+    gap: 10px;
+}
+
+p {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+a {
+    width: 500px;
+    height: 50px;
+    border: 3px solid gray;
+    border-radius: 50px;
+    display: flex;
+    /*justify-content: center;*/
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-size: large;
 
 
-git update
+}
+
+img {
+    margin-left: 30%;
+}
+
+.facebook img {
+    width:32px;
+    height: 32px;
+    background-size: cover;
+    margin-right: 20px;
+}
+.gmail img {
+    width:32px;
+    height: 32px;
+    background-size: cover;
+    margin-right: 20px;
+}
+
+.github img {
+    width:32px;
+    height: 32px;
+    background-size: cover;
+    margin-right: 20px;
+}
+.last-a-tag{
+    border: none;
+    margin-top: 10px;
+}
+.sign-up {
+    width: 640px;
+    height: 1000px;
+    background-color: antiquewhite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid orangered;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    flex-direction: column;
+    position: none;
+    top: 12%;
+}
+
+.parent-form-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.parent-form-box {
+    margin-top: 50px;
+}
+
+.sign-up {
+    width: 640px;
+    height: 950px;
+    background-color: antiquewhite;
+    display: flex;
+    align-items: center;
+    justify-content: none;
+    border: 1px solid orangered;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    flex-direction: column;
+    position: none;
+    top: 12%;
+}
+
+form {
+    width: 528px;
+    height: 502px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sign-up-h2 {
+    margin-top: 20px;
+}
+
+label {
+    width: 528px;
+    height: 25px;
+    color:gray; 
+}
+
+input {
+    margin-top: 10px;
+    width: 500px;
+    height: 50px;
+    border: 2px solid gray;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;font-size: 18px;
+    color: black;
+    text-align: center;
+    margin-bottom: 10px;;
+}
+
+.form-box p {
+    color: gray;
+}
+
+.user-data {
+    margin-top: 40px;
+}
+
+.gender-box {
+    margin-top:10px;
+}
+
+
+label {
+    color: black;
+}
+.gender input {
+    color: black;
+    width: 15px;
+    height: 15px;
+}
+
+#male ,#non-binary {
+    margin-left: 30px;
+}
+
+.date-of-birth-box {
+    display: flex;
+    margin-top: 20px;
+    gap: 40px;
+}
+
+.month-box select {
+    width: 110px;
+    height: 45px;
+    border: 2px solid black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+    display: flex;
+    margin-top: 10px;
+}
+
+.date-box select {
+    width: 110px;
+    height: 45px;
+    border: 2px solid black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+    display: flex;
+    margin-top: 10px;
+}
+
+.year-box select {
+    width: 110px;
+    height: 45px;
+    border: 2px solid black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+    display: flex;
+    margin-top: 10px;
+}
+
+.tou {
+    margin-top: 20px;
+}
+
+.reCAPTCHA {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 70px;
+    border: 2px solid gray;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 20px;
+}
+#reCAPTCHA {
+    width: 15px;
+    height: 15px;
+}
+span {
+    margin-right: 50px;
+}
+
+.sign-up-button {
+    margin-top: 30px;
+    width: 500px;
+    height: 50px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 20px;
+}
+
+#lastp {
+    margin-top: 20px;
+    margin-left: 25%;
+}

@@ -39,12 +39,14 @@
                     <a href="#gmail" class="gmail"><img src="icons/google.png" alt="Gmail">Continue with Gmail</a>
                     <a href="#github" class="github"><img src="icons/github.png" alt="GitHub">Continue with GitHub</a>
                 </div>
+                <a href="sign-up" id="sign-up" class="last-a-tag">Create an account</a>
             </form>
         </div>
     </div>
     <div class="sign-up">
         <form action="#none2">
             <h2>Create an account</h2>
+            <div class="parent-form-box">
             <div class="from-box">
                 <label for="username">Profile name</label>
                 <input type="text" name="username" id="usernmae" placeholder="Enter your profile name" required>
@@ -53,7 +55,71 @@
                 <label for="useremail">Email</label>
                 <input type="text" name="useremail" id="useremail" placeholder="Enter your email address" requirede>
             </div>
-            <div class="form-box"></div>
+            <div class="form-box">
+                <label for="userpassword">Password</label>
+                <input type="password" name="userpassword" id="userpassword" placeholder="Enter your password" required>
+                <p>Use 8 or more characters with a mix letters,numbers & symbols</p>
+            </div>
+        </div>
+            <div class="user-data">
+                <div class="gender">
+                    <label for="gender">What's your gender? (optional)</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="non-binary" name="gender" value="non-binary">
+                    <label for="non-binary">Non-binary</label>
+                </div>
+                <label for="dob">What's your date of birth?</label>
+                <div class="dob-months">
+                    <label for="dob-month">Months</label>
+                    <select name="dob-month" id="dob-month">
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select>
+                </div>
+                <div class="dob-date">
+                    <label for="dob-date">Date</label>
+                    <select name="dob-date" id="dob-date">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+            
+                <div class="dob-year">
+                    <label for="dob-year">Year</label>
+                    <select name="dob-year" id="dob-year">
+                        <option value="1800">1800</option>
+                        <option value="1900">1900</option>
+                        <option value="2000">2000</option>
+                    </select>
+                </div>
+            
+                <p>By creating an account, you agree to the <a href="Terms of use">Terms of use</a> and <a href="Privacy Policy">Privacy Policy</a>.</p>
+            
+                <div class="reCAPTCHA">
+                    <input type="checkbox" id="reCAPTCHA" checked>
+                    <label for="reCAPTCHA">I'm not a robot</label>
+                    <img src="icons/google_recaptcha-official 2.svg" alt="reCAPTCHA">
+                </div>
+            
+                <button class="sign-up-button">Sign Up</button>
+                <p>Already have an account? <a href="sign-in">Sign in</a></p>
+            </div>
         </form>
     </div>
     <script src="script.js"></script>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="test.css">
 </head>
 <body>
     <div class="container">
@@ -16,12 +16,12 @@
                     <option value="spanish">Español (Spanish)</option>
                     <option value="chiness">中文 (Chinese)</option>
                 </select>
-                <div class="mode-toggle">
+                <div class="mode-toggle" onclick="toggleMode()">
                     <img src="icons/dark-mode.png" alt="Dark/Light">
                 </div>
             </div>
         </nav>
-        <div class="sign-up">
+<!--        <div class="sign-in">
             <form action="#none">
                 <h2>Sign in</h2>
                 <div class="form-box">
@@ -41,6 +41,90 @@
                 </div>
             </form>
         </div>
+    </div> -->
+    <div class="sign-up">
+        <form action="#none2">
+            <h2 id="sign-up-h2">Create an account</h2>
+            <div class="parent-form-box">
+            <div class="from-box">
+                <label for="username">Profile name</label>
+                <input type="text" name="username" id="usernmae" placeholder="Enter your profile name" required>
+            </div>
+            <div class="form-box">
+                <label for="useremail">Email</label>
+                <input type="text" name="useremail" id="useremail" placeholder="Enter your email address" requirede>
+            </div>
+            <div class="form-box">
+                <label for="userpassword">Password</label>
+                <input type="password" name="userpassword" id="userpassword" placeholder="Enter your password" required>
+                <p>Use 8 or more characters with a mix letters,numbers & symbols</p>
+            </div>
+        </div>
+            <div class="user-data">
+                <div class="gender">
+                    <label for="gender">What's your gender? (optional)</label>
+                    <div class="gender-box">
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="non-binary" name="gender" value="non-binary">
+                    <label for="non-binary">Non-binary</label>
+                </div>
+                </div>
+
+                <label for="dob" id="dob-label">What's your date of birth?</label>
+            <div class="date-of-birth-box">
+                <div class="month-box">
+                    <label for="dob-month" class="dob-label">Months</label>
+                    <select name="dob-month" id="dob-months">
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select>
+                </div>
+                <div class="date-box">
+                    <label for="dob-date" class="dob-label">Date</label>
+                    <select name="dob-date" id="dob-date">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+            
+                <div class="year-box">
+                    <label for="dob-year" class="dob-label">Year</label>
+                    <select name="dob-year" id="dob-year">
+                        <option value="1800">1800</option>
+                        <option value="1900">1900</option>
+                        <option value="2000">2000</option>
+                    </select>
+                </div>
+            </div>
+                <p class="tou">By creating an account, you agree to the <a class=" tou" href="Terms of use">Terms of use</a> and <a href="Privacy Policy">Privacy Policy</a>.</p>
+            
+                <div class="reCAPTCHA">
+                    <input type="checkbox" id="reCAPTCHA" checked>
+                    <span>I'm not a robot</span>
+                    <img src="google_recaptcha-official 2 copy.svg" alt="reCAPTCHA">
+                </div>
+            
+                <button class="sign-up-button">Sign Up</button>
+                <p id="lastp">Already have an account? <a href="sign-in">Sign in</a></p>
+            </div>
+        </form>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
