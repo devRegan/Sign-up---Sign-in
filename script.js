@@ -58,8 +58,6 @@ function languageChanged() {
 function toggleForms() {
     const signInForm = document.getElementById('sign-in-form');
     const signUpForm = document.getElementById('sign-up-form');
-
-    // Toggle visibility of the forms
     if (signInForm.style.display === 'none' || signInForm.style.display === '') {
         signInForm.style.display = 'block';
         signUpForm.style.display = 'none';
@@ -68,13 +66,9 @@ function toggleForms() {
         signUpForm.style.display = 'block';
     }
 }
-
-// Initialize the forms on page load
 document.addEventListener('DOMContentLoaded', () => {
     const signInForm = document.getElementById('sign-in-form');
     const signUpForm = document.getElementById('sign-up-form');
-
-    // Set initial display
     signInForm.style.display = 'block';
     signUpForm.style.display = 'none';
 });
