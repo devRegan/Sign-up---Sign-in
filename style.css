@@ -14,23 +14,21 @@ body.dark-mode {
     background-color: black;
     color: white;
 }
-/* Additional styling for select dropdown and other text elements in dark mode */
+
 body.dark-mode select,
 body.dark-mode option {
-    background-color: black;  /* Dark background for the dropdown */
-    color: white;             /* White text color for the dropdown options */
+    background-color: black;
+    color: white;
 }
 
 body.dark-mode label,
 body.dark-mode p {
-    color: white;  /* Ensure label and paragraph texts are also white */
+    color: white;
 }
 
-/* Ensure the button text and other important text elements are visible */
 body.dark-mode button {
-    color: whitesmoke;  /* Light text color on dark button */
+    color: whitesmoke;
 }
-
 
 .container {
     width: 100%;
