@@ -75,7 +75,7 @@ select {
     border-radius: 50%;
 }
 
-.sign-up {
+.sign-in {
     width: 640px;
     height: 582px;
     background-color: antiquewhite;
@@ -92,13 +92,13 @@ select {
     top: 12%;
 }
 
-.sign-up {
+.sign-in {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.sign-up {
+.sign-in {
     display: flex;
     flex-direction: column;
     align-items: center;
