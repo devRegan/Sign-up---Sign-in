@@ -71,6 +71,8 @@ select {
     widtH: 35px;
     height: 35px;
     background-size: cover;
+    border: 2px solid white;
+    border-radius: 50%;
 }
 
 .sign-up {
@@ -119,9 +121,9 @@ form {
     margin-bottom: 20px;
 }
 
-.form-box:nth-child(2) {
-    margin-top: 10px;
-}
+/*.form-box:nth-child(2) {
+    margin-top: 5px;
+}*/
 
 label {
     width: 528px;
@@ -152,11 +154,12 @@ button {
     border: none;
     border-radius: 50px;
     margin-top: 20px;
+    flex-direction: ;
 }
 
 .social-buttons {
     display: flex;
-    align-items: center;
+    /*align-items: center;*/
     flex-direction: column;
     gap: 10px;
 }
@@ -171,14 +174,20 @@ p {
 a {
     width: 500px;
     height: 50px;
-    border: 2px solid gray;
+    border: 3px solid gray;
     border-radius: 50px;
     display: flex;
-    justify-content: center;
+    /*justify-content: center;*/
     align-items: center;
     text-decoration: none;
     color: black;
+    font-size: large;
 
+
+}
+
+img {
+    margin-left: 30%;
 }
 
 .facebook img {
