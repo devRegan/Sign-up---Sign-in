@@ -5,19 +5,47 @@
     font-family: Arial, sans-serif;
   }
 
+body {
+    background-color: white;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: black;
+    color: white;
+}
+/* Additional styling for select dropdown and other text elements in dark mode */
+body.dark-mode select,
+body.dark-mode option {
+    background-color: black;  /* Dark background for the dropdown */
+    color: white;             /* White text color for the dropdown options */
+}
+
+body.dark-mode label,
+body.dark-mode p {
+    color: white;  /* Ensure label and paragraph texts are also white */
+}
+
+/* Ensure the button text and other important text elements are visible */
+body.dark-mode button {
+    color: whitesmoke;  /* Light text color on dark button */
+}
+
+
 .container {
     width: 100%;
     height: 1238px;
-    background-color: cadetblue;
+/*    background-color: cadetblue; */
+    background-color: none;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   
 .nav {
-    width: 1440px;
+    width: 100%;
     height: 73px;
-    background-color: #DFF2EB;
+/*    background-color: #DFF2EB;  */
     position: fixed;
     top: 0;
     z-index: 1000;
@@ -60,6 +88,8 @@ select {
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     flex-direction: column;
+    position: fixed;
+    top: 12%;
 }
 
 .sign-up {
@@ -115,11 +145,11 @@ input {
 }
 
 button {
-    width: 128px;
-    height: 55px;
+    width: 100px;
+    height: 60px;
     background-color: gray;
     color: whitesmoke;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
     border: none;
     border-radius: 50px;
